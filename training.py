@@ -4,16 +4,17 @@ from transformers import TrainingArguments
 
 def Training_Arguments():
     args = TrainingArguments(
-        per_device_train_batch_size=1,
+        per_device_train_batch_size=2, 
         gradient_accumulation_steps=4,
-        warmup_steps=2,
-        max_steps=600,
-        learning_rate=2e-4,
+        warmup_steps=100,  
+        max_steps=1000,    
+        learning_rate=1e-4,  
         fp16=True,
-        logging_steps=5,
+        logging_steps=10, 
         output_dir="outputs",
         optim="paged_adamw_8bit",
-        report_to="none" 
+        report_to="tensorboard",  
+        save_steps=500,   
     )
     return args
 
@@ -30,4 +31,3 @@ def Trainer(train_loader, model, lora_config):
     )
     
     return trainer
-
