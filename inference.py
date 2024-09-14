@@ -19,7 +19,7 @@ def generate_inference(model, tokenizer, input_text, max_length=50):
     return generated_text
 
 if __name__=="__main__":
-  checkpoint_dir = "/kaggle/working/Finetuning_Gamma_antonyms/outputs/checkpoint-300"
+  checkpoint_dir = "/kaggle/working/Finetuning_Gamma_antonyms/Finetuning_Gamma_antonyms/outputs/checkpoint-500"
   model, tokenizer = load_model_and_tokenizer(checkpoint_dir)
   input_text = "abnormal"
   generated_text = generate_inference(model, tokenizer, input_text)
