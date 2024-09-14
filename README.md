@@ -5,15 +5,14 @@ Finetuning_Gamma_antonyms is a project designed to fine-tune the Gamma model for
 
 ## Key Features:
 
-    Model quantization using BitsAndBytes for memory-efficient inference.
-    LoRA-based finetuning to reduce computational costs.
-    Utilization of Hugging Face’s transformers library for model loading and generation.
-    Training and inference pipelines for handling the antonym generation task.
+    - Model quantization using BitsAndBytes for memory-efficient inference.
+    - LoRA-based finetuning to reduce computational costs.
+    - Utilization of Hugging Face’s transformers library for model loading and generation.
+    - Training and inference pipelines for handling the antonym generation task.
 
-## Setup Instructions
 ## Prerequisites
 
-Ensure you have the following installed:
+- Ensure you have the following installed:
     Python 3.8 or higher
     PyTorch (CUDA support optional)
     Hugging Face transformers library
