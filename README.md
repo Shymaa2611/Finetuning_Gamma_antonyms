@@ -13,12 +13,12 @@ Finetuning_Gamma_antonyms is a project designed to fine-tune the Gamma model for
 ## Prerequisites
 
 - Ensure you have the following installed:
-    Python 3.8 or higher
-    PyTorch (CUDA support optional)
-    Hugging Face transformers library
-    bitsandbytes for quantization
-    peft for LoRA configuration
-    Kaggle environment (optional) if using Kaggle for training or inference
+    - Python 3.8 or higher
+    - PyTorch (CUDA support optional)
+    - Hugging Face transformers library
+    - bitsandbytes for quantization
+    - peft for LoRA configuration
+    - Kaggle environment (optional) if using Kaggle for training or inference
 
 ## Installation
 ```bash
