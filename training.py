@@ -1,5 +1,5 @@
 from transformers import AutoTokenizer, AutoModelForCausalLM
-from trl import SFTTrainer, SFTConfig  # Import SFTConfig
+from trl import SFTTrainer
 from transformers import TrainingArguments
 
 def Training_Arguments():
@@ -20,20 +20,14 @@ def Training_Arguments():
 def Trainer(train_loader, model, lora_config):
     args = Training_Arguments()
     
-    # Create SFTConfig and set arguments
-    sft_config = SFTConfig(
-        dataset_text_field="lemma",  # Update to your specific field
-        packing=False,  # Update to True if needed
-        max_seq_length=1024  # Set max sequence length or any other config needed
-    )
-    
-    # Initialize SFTTrainer with SFTConfig
     trainer = SFTTrainer(
         args=args,
         train_dataset=train_loader.dataset,
         model=model,
         peft_config=lora_config,
-        sft_config=sft_config  # Pass the SFTConfig here
+        dataset_text_field="lemma",  
+        packing=False  
     )
     
     return trainer
+
