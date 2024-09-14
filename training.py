@@ -6,14 +6,14 @@ def Training_Arguments():
         per_device_train_batch_size=2, 
         gradient_accumulation_steps=4,
         warmup_steps=100,  
-        max_steps=50,    
+        max_steps=100    
         learning_rate=1e-5,  
         fp16=True,
         logging_steps=10, 
         output_dir="outputs",
         optim="paged_adamw_8bit",
         report_to="tensorboard",  
-        save_steps=500,   
+        save_steps=100,   
     )
     return args
 
