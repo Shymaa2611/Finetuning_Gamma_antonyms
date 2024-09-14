@@ -17,6 +17,9 @@ Finetuning_Gamma_antonyms/
 ├── README.md              
 └── requirements.txt
 ```
+# Dataset
+
+The dataset used for fine-tuning consists of a CSV file named antonyms.csv, which is located in the data/ directory. This file contains pairs of words and their antonyms in the following format:
 
 ## Key Features:
 
