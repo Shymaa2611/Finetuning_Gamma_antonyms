@@ -3,6 +3,21 @@
 ## Project Overview
 Finetuning_Gamma_antonyms is a project designed to fine-tune the Gamma model for generating antonyms of words using causal language modeling (CLM). This project leverages Hugging Face’s transformers library, dynamic quantization, and LoRA (Low-Rank Adaptation) for model finetuning, enabling efficient model inference and training for natural language processing (NLP) tasks such as generating antonyms.
 
+## Project Structure
+```bash
+Finetuning_Gamma_antonyms/
+├── models/                
+├── outputs/              
+├── data/                 
+├── inference.py 
+├── dataset.py
+├── evaluate.py
+├── training.py 
+├── main.py                
+├── README.md              
+└── requirements.txt
+```
+
 ## Key Features:
 
     - Model quantization using BitsAndBytes for memory-efficient inference.
