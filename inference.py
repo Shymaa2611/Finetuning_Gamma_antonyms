@@ -22,6 +22,5 @@ if __name__=="__main__":
   checkpoint_dir = "/kaggle/working/Finetuning_Gamma_antonyms/outputs/checkpoint-300"
   model, tokenizer = load_model_and_tokenizer(checkpoint_dir)
   word="happy"
-  input_text = f"the antonym of the word {word}"
-  generated_text = generate_inference(model, tokenizer, input_text)
+  generated_text = generate_inference(model, tokenizer,word)
   print(generated_text)
