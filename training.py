@@ -12,7 +12,8 @@ def Training_Arguments():
         fp16=True,
         logging_steps=5,
         output_dir="outputs",
-        optim="paged_adamw_8bit"
+        optim="paged_adamw_8bit",
+        report_to="none" 
     )
     return args
 
