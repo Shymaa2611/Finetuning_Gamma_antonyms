@@ -1,8 +1,9 @@
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 def load_model_and_tokenizer(checkpoint_dir):
-    tokenizer = AutoTokenizer.from_pretrained(checkpoint_dir)
-    model = AutoModelForCausalLM.from_pretrained(checkpoint_dir)
+    token="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"  
+    tokenizer = AutoTokenizer.from_pretrained(checkpoint_dir,use_auth_token=token)
+    model = AutoModelForCausalLM.from_pretrained(checkpoint_dir,use_auth_token=token)
     return model, tokenizer
 
 def generate_inference(model, tokenizer, input_text, max_length=50):
@@ -18,9 +19,13 @@ def generate_inference(model, tokenizer, input_text, max_length=50):
     
     return generated_text
 
-if __name__=="__main__":
-  checkpoint_dir = "/kaggle/working/Finetuning_Gamma_antonyms/outputs/checkpoint-300"
+
+def get_word_antonym(word:str):
+  checkpoint_dir = "checkpoint"
   model, tokenizer = load_model_and_tokenizer(checkpoint_dir)
-  word="happy"
-  generated_text = generate_inference(model, tokenizer,word)
-  print(generated_text)
+  input_text = f"the antonym of the word {word}"
+  generated_text = generate_inference(model, tokenizer, input_text)
+  return generated_text
+
+if __name__=="__main__":
+   print(get_word_antonym("happy"))
