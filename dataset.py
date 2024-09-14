@@ -7,11 +7,16 @@ def load_csv_files(file_path):
     df = pd.read_csv(file_path)  
     return df
 
+
+
 def split_data(file_path, test_size=0.30, random_state=42):
-    df=load_csv_files(file_path)
-    X=df['lemma'] 
-    y=df['antonyms']
-    train_data, test_data = train_test_split(X,y, test_size=test_size, random_state=random_state)
+    df = load_csv_files(file_path)  
+    X = df['lemma']
+    y = df['antonyms']
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=random_state)
+    train_data = (X_train, y_train)
+    test_data = (X_test, y_test)
+    
     return train_data, test_data
 
 
