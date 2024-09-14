@@ -20,7 +20,7 @@ def model_Quantization():
         bnb_4bit_compute_dtype=torch.bfloat16
     )
     
-    token = "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"  
+    token = "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"  
     model_name = "google/gemma-2b-it"
    
     tokenizer = AutoTokenizer.from_pretrained("google/gemma-2b-it")
