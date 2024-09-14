@@ -7,7 +7,7 @@ def Training_Arguments():
         per_device_train_batch_size=1,
         gradient_accumulation_steps=4,
         warmup_steps=2,
-        max_steps=300,
+        max_steps=600,
         learning_rate=2e-4,
         fp16=True,
         logging_steps=5,
