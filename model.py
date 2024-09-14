@@ -1,16 +1,9 @@
 from transformers import BitsAndBytesConfig
 import torch
-from transformers import AutoModelForCausalLM,AutoTokenizer
+from transformers import Gemma2ForCausalLM,AutoTokenizer
 from peft import LoraConfig
 
 
-tokenizer = AutoTokenizer.from_pretrained("google/gemma-2b-it")
-model = AutoModelForCausalLM.from_pretrained(
-    "google/gemma-2b-it",
-    device_map="auto",
-    torch_dtype=torch.bfloat16,
-    quantization_config=bnb_config
-)
 
 
 def model_Quantization():
@@ -20,14 +13,13 @@ def model_Quantization():
         bnb_4bit_compute_dtype=torch.bfloat16
     )
     
-    token = "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"  
+    #token = "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"  
     model_name = "google/gemma-2b-it"
    
-    tokenizer = AutoTokenizer.from_pretrained("google/gemma-2b-it")
-    model = AutoModelForCausalLM.from_pretrained(
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    model = Gemma2ForCausalLM.from_pretrained(
         model_name, 
-        
-        use_auth_token=token
+        quantization_config=bnb_config
     )
     
     return model, tokenizer
