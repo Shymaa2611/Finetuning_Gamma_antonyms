@@ -21,6 +21,7 @@ def generate_inference(model, tokenizer, input_text, max_length=50):
 if __name__=="__main__":
   checkpoint_dir = "/kaggle/working/Finetuning_Gamma_antonyms/Finetuning_Gamma_antonyms/outputs/checkpoint-500"
   model, tokenizer = load_model_and_tokenizer(checkpoint_dir)
-  input_text = "bad"
+  word="happy"
+  input_text = f"Provide the antonym of the word {word}"
   generated_text = generate_inference(model, tokenizer, input_text)
   print(generated_text)
