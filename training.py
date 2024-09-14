@@ -23,7 +23,9 @@ def Trainer(train_loader, model, lora_config):
         args=args,
         train_dataset=train_loader.dataset,
         model=model,
-        peft_config=lora_config
+        peft_config=lora_config,
+        dataset_text_field="lemma",  
+        packing=False  
     )
     
     return trainer
