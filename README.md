@@ -60,7 +60,7 @@ pip install -r requirements.txt
 !python inference.py
 
 ## Checkpoint
-- can download from : 
+- can download from : https://drive.google.com/file/d/1NThgMZQLc4hWvLbzzki7IO3W9rPY3eYF/view?usp=drive_link
 ## Acknowledgments
     Hugging Face for the transformers library.
     LoRA: Low-Rank Adaptation for efficient finetuning.
