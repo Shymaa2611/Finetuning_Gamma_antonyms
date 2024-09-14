@@ -17,14 +17,14 @@ def Training_Arguments():
     )
     return args
 
-def Trainer(train_loader, model):
+def Trainer(train_loader, model, lora_config):
     args = Training_Arguments()
     
     trainer = SFTTrainer(
         args=args,
         train_dataset=train_loader.dataset,
         model=model,
-        #peft_config=lora_config,
+        peft_config=lora_config,
         dataset_text_field="lemma",  
         packing=False  
     )
