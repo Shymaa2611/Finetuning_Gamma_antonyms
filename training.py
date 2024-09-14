@@ -1,4 +1,3 @@
-from transformers import AutoTokenizer, AutoModelForCausalLM
 from trl import SFTTrainer
 from transformers import TrainingArguments
 

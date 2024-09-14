@@ -1,3 +1,10 @@
+from transformers import AutoTokenizer, AutoModelForCausalLM
+
+def load_model_and_tokenizer(checkpoint_dir):
+    tokenizer = AutoTokenizer.from_pretrained(checkpoint_dir)
+    model = AutoModelForCausalLM.from_pretrained(checkpoint_dir)
+    return model, tokenizer
+
 def generate_inference(model, tokenizer, input_text, max_length=50):
     inputs = tokenizer(input_text, return_tensors="pt", truncation=True, padding=True)
     outputs = model.generate(
@@ -10,3 +17,10 @@ def generate_inference(model, tokenizer, input_text, max_length=50):
     generated_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
     
     return generated_text
+
+
+checkpoint_dir = "checkpoint"
+model, tokenizer = load_model_and_tokenizer(checkpoint_dir)
+input_text = "good"
+generated_text = generate_inference(model, tokenizer, input_text)
+print(generated_text)

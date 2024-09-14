@@ -3,9 +3,6 @@ import torch
 from transformers import AutoModelForCausalLM,AutoTokenizer
 from peft import LoraConfig
 
-
-
-
 def model_Quantization():
     bnb_config = BitsAndBytesConfig(
         load_in_4bit=True,
