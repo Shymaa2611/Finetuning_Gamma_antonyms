@@ -1,7 +1,7 @@
 from training import Trainer
 from dataset import get_data
 from model import model_Quantization,Lora_Configuration
-from evaluate import evaluate
+#from evaluate import evaluate
 def run(train_loader,model,lora_config):
     trainer=Trainer(train_loader,model,lora_config)
     trainer.train()
